@@ -1,0 +1,49 @@
+drop table if exists orders;
+drop table if exists customers;
+drop table if exists emps;
+ 
+create table if not exists customers(
+  id int(5) primary key auto_increment,
+  name varchar(10) not null,
+  age int(2) not null 
+);
+insert into customers(name,age) values('÷Ó∏¡¡',33);
+insert into customers(name,age) values('ÀÔ»®',44);
+insert into customers(name,age) values('≤‹≤Ÿ',55);
+insert into customers(name,age) values('Àæ¬Ì‹≤',66);
+
+create table if not exists orders(
+  id int(5) primary key auto_increment,
+  isbn varchar(10) not null,
+  price integer not null,
+  customers_id int(5),
+  constraint customers_id_FK foreign key(customers_id) references customers(id)  
+);
+insert into orders(isbn,price,customers_id) values('isbn100',100,1);
+insert into orders(isbn,price,customers_id) values('isbn200',200,1);
+insert into orders(isbn,price,customers_id) values('isbn100',100,1);
+insert into orders(isbn,price,customers_id) values('isbn200',200,2);
+insert into orders(isbn,price,customers_id) values('isbn100',100,2);
+insert into orders(isbn,price,customers_id) values('isbn100',100,3);
+
+create table if not exists emps(
+  empno int(5) primary key,
+  ename varchar(10),
+  mgr int(5)
+);
+insert into emps(empno,ename,mgr) values(1,'AA',5);
+insert into emps(empno,ename,mgr) values(2,'BB',5);
+insert into emps(empno,ename,mgr) values(3,'CC',6);
+insert into emps(empno,ename,mgr) values(4,'DD',6);
+insert into emps(empno,ename,mgr) values(5,'EE',7);
+insert into emps(empno,ename,mgr) values(6,'FF',7);
+insert into emps(empno,ename,mgr) values(7,'GG',9);
+insert into emps(empno,ename,mgr) values(8,'HH',9);
+insert into emps(empno,ename,mgr) values(9,'II',NULL);
+
+select * from customers;
+select * from orders;
+select * from emps;
+
+
+

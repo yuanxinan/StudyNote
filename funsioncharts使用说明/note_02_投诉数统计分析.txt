@@ -1,0 +1,63 @@
+需求：根据年度将相应年度的每个月的投诉数进行统计，并以图表的形式展示在页面中；在页面中可以选择查看当前年度及其前4年的投诉数。在页面中可以选择不同的年度，然后页面展示该年度的曲线统计图
+
+内容：① 统计年度的每个月的投诉数；（未到月份不应该显示投诉数，已过的月份如果没有投诉数应该显示为0）
+      ② 页面中可选择近5年的年份；并且根据选择的年份显示投诉统计图表
+
+
+-----------------------------------------------------------------前端
+1、年份选择（最近5年）
+
+2、一进入页面中需要加载当前年度的投诉统计数
+
+[
+{
+   "label": "1 月",
+   "value": "42"
+},
+{
+   "label": "2 月",
+   "value": "81"
+}
+]
+
+
+-----------------------------------------------------------------后端
+
+目标： 统计年度的每个月的投诉数
+Action:
+1、获取年份
+2、统计年度的每个月的投诉数并输出json格式字符串
+
+2.1、根据年份统计该年份各个月的投诉数
+
+统计语句：
+
+统计相应年度各个月的投诉数sql:
+
+select 月份，投诉数
+from 投诉
+where 年度=传入值
+group by 月份
+
+------------------实际月份的投诉数统计结果
+select month(comp_time) as '月份',count(*) '总数'
+from complain
+where year(comp_time)=?
+group by month(comp_time)
+
+
+select imonth, count(comp_id)
+from tmonth left join complain on imonth=month(comp_time)
+and year(comp_time)=?
+group by imonth
+order by imonth;
+
+----------------------------------------------
+select imonth,c2
+from tmonth left join (select month(comp_time) c1, count(comp_id) c2 from complain where year(comp_time)=? group by month(comp_time)) t
+on imonth = c1
+order by imonth;
+
+返回json格式字符串：① 当年份是非当前年份的话：则每月对应的投诉数如果出现空值则应设置为0；②当前年份的话：则每月中如果是月份大于当前月份投诉数出现空值则为空值或0时也设为空
+
+

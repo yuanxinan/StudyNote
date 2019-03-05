@@ -1,0 +1,75 @@
+一）内连接（等值连接）：查询客户姓名，订单编号，订单价格
+    ---------------------------------------------------
+    select c.name,o.isbn,o.price
+    from customers c inner join orders o
+    where c.id = o.customers_id;
+    ---------------------------------------------------
+    select c.name,o.isbn,o.price
+    from customers c join orders o
+    where c.id = o.customers_id; 
+    ---------------------------------------------------
+    select c.name,o.isbn,o.price
+    from customers c,orders o
+    where c.id = o.customers_id;
+    ---------------------------------------------------
+    select c.name,o.isbn,o.price
+    from customers c join orders o
+    on c.id = o.customers_id;
+    ---------------------------------------------------
+    注意：内连接（等值连接）只能查询出多张表中，连接字段相同的记录
+
+
+
+
+二）外连接：按客户分组，查询每个客户的姓名和订单数
+    ---------------------------------------------------
+    左外连接：
+    select c.name,count(o.isbn)
+    from  customers c left outer join orders o
+    on c.id = o.customers_id
+    group by c.name; 
+    ---------------------------------------------------
+    右外连接：
+    select c.name,count(o.isbn)
+    from  orders o right outer join customers c   
+    on c.id = o.customers_id
+    group by c.name; 
+    ---------------------------------------------------
+    注意：外连接既能查询出多张表中，连接字段相同的记录；又能根据一方，将另一方不符合相同记录强行查询出来
+
+
+
+
+三）自连接：求出AA的老板是EE
+    ---------------------------------------------------
+    内自连接：
+    select users.ename,boss.ename
+    from emps users inner join emps boss 
+    on users.mgr = boss.empno;
+    ---------------------------------------------------
+    外自连接：
+    select users.ename,boss.ename
+    from emps users left outer join emps boss 
+    on users.mgr = boss.empno;
+    ---------------------------------------------------
+    注意：自连接是将一张表，通过别名的方式，看作多张表后，再进行连接。
+	  这时的连接即可以采用内连接，又可以采用外连接
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

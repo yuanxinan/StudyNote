@@ -1,0 +1,5 @@
+如果要在html中使用easyui，注意要用4.0的约束！！！否则会出现样式偏差
+练习的项目是E:\Myeclipse2015workspace\js-provincecityarea和E:\Myeclipse2015workspace\easyuiFinal
+
+中文乱码问题在“遇到的问题”中有解决办法
+

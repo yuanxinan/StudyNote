@@ -1,0 +1,35 @@
+1A）客户端发出http请求，只要请求形式符合web.xml
+   文件中配置的*.action的话，就由DispatcherServlet
+   来处理。
+
+1B）DispatcherServlet再将http请求委托给映射器
+   的对象来将http请求交给对应的Action来处理
+
+2）映射器根据客户的http请求，再对比<bean name="/hello.action
+   如果匹配正确，再将http请求交给程序员写的Action
+
+3）执行Action中的业务方法，最终返回一个名叫ModelAndView
+   的对象，其中封装了向视图发送的数据和视图的逻辑名
+
+4）ModelAndView对象随着响应到到DispatcherServlet中了
+
+
+5）这时DispatcherServlet收到了ModelAndView对象，
+   它也不知道视图逻辑名是何意，又得委托一个名叫
+   视图解析器的对象去具体解析ModelAndView对象
+   中的内容
+
+6）将视图解析器解析后的内容，再次交由DispatcherServlet
+   核心控制器，这时核心控制器再将请求转发到具体的
+   视图页面，取出数据，再显示给用户
+
+
+
+
+
+
+
+
+
+
+   

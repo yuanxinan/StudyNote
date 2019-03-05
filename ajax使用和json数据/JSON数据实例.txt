@@ -1,0 +1,46 @@
+保存患者基本信息002003001013
+
+{
+    "master": {
+        "pkPi": "e6f6c389851d4352b898272348e0ab4f",
+        "pkPv": "c5a8d99226d345c78b1687bf34db8e44",
+        "codePi": "HZ20160000000092",
+        "namePi": "护士测1",
+        "dtSex": "02",
+        "birthDate": "20000226000000",
+        "dtIdtype": "06",
+        "idNo": "20160926",
+        "mobile": "18825631236",
+        "insurNo": null,
+        "namePicate": "癌症",
+        "nameAl": "",
+        "nameInsu": "",
+        "nameDiag": "洁霉素药物反应",
+        "flagIn": null,
+        "codePv": null,
+        "pkEmpPhy": null,
+        "nameEmpPhy": null,
+        "pkEmpNs": null,
+        "nameEmpNs": null,
+        "bedNo": "345",
+        "pkDept": "d82248d794da4c9c9010d5860af7cfde",
+        "pkDeptNs": "d82248d794da4c9c9010d5860af7cfde",
+        "euStatus": "2",
+        "dateBegin": "20160923155156",
+        "dateEnd": "20161024091724",
+        "dateClinic": null,
+        "prepayAmount": null,
+        "totalAmount": null
+    },
+    "insuranceList": [
+    ],
+    "familyList": [
+    ],
+    "addressList": [
+    ],
+    "allergicList": [
+    ],
+    "diseList": [
+    ]
+}
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="">
+	
+	<resultMap type="" id="">
+		<id property="" column=""/>
+		<result property="" column=""/>
+		<result property="" column=""/>
+	</resultMap>
+	
+
+	<insert id="" parameterType="">
+		insert into students(id,name,sal) values(#{id},#{name},#{sal})
+	</insert>
+	
+</mapper>

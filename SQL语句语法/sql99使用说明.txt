@@ -1,0 +1,2 @@
+通过jpg和txt共三个文件，到数据库中实验一下。
+ps：left outer和right outer的意思是以哪边为基础，如果一边有null的情况的话两边就不能随便调换，最好left和outer两个都运行一下，看下结果。
