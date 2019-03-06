@@ -1,0 +1,3 @@
+select xx.empno,xx.ename,xx.job,xx.mgr,xx.hiredate,xx.sal,xx.comm,xx.deptno
+from (select rownum id,emp.* from emp where rownum<end) xx
+where id>start;

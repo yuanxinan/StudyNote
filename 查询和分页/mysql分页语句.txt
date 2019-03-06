@@ -1,0 +1,4 @@
+select students_id,students_name,students_sal from students limit start,size
+
+
+

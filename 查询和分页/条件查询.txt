@@ -1,0 +1,16 @@
+InfoAction.java
+
+FROM Info 
+WHERE title like ? and state = ? 
+order by createTime,state
+
+
+条件查询（QueryHelper）：
+
+1、查询条件语句hql：
+from 子句：必定出现；而且只出现一次
+where 子句：可选；但关键字where 出现一次；可添加多个查询条件
+order by子句：可选；但关键字order by 出现一次；可添加多个排序属性
+
+2、查询条件值集合：
+出现时机：在添加查询条件的时候，?对应的查询条件值

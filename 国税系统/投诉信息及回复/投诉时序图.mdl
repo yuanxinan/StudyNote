@@ -1,0 +1,2249 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	134)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    attributes 	(list Attribute_Set
+	(object Attribute
+	    tool       	"Java"
+	    name       	"IDE"
+	    value      	"Internal Editor"))
+    quid       	"57CAB6BF0149"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"57CAB6BF014B"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Class "用户"
+		quid       	"57CAB737023C"
+		stereotype 	"Actor"))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"57CAB6BF0387"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Use Case View::用户" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(452, 318)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(452, 478)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	325
+			    justify    	0
+			    label      	"用户")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"57CAB737023C"
+			annotation 	8
+			autoResize 	TRUE)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"57CAB6BF014A"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"57CAB6BF014C"
+	logical_models 	(list unit_reference_list
+	    (object Mechanism @2
+		logical_models 	(list unit_reference_list
+		    (object Object "$UNNAMED$0"
+			quid       	"57CAB75501F0"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"57CAB78D00DD"
+				supplier   	"系统首页Action"
+				quidu      	"57CAB770024E"
+				messages   	(list Messages
+				    (object Message "我要投诉"
+					quid       	"57CAB78D00DE"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1"
+					ordinal    	0
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			class      	"Use Case View::用户"
+			quidu      	"57CAB737023C"
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE)
+		    (object Object "系统首页Action"
+			quid       	"57CAB770024E"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"57CAB7B3025F"
+				supplier   	"我要投诉页面"
+				quidu      	"57CAB79F01FE"
+				messages   	(list Messages
+				    (object Message "跳转到我要投诉页面"
+					quid       	"57CAB7B30260"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1.1"
+					ordinal    	1
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "获取用户列表"
+					quid       	"57CAB7EE0365"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"2.1"
+					ordinal    	3
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "输出用户列表json格式字符串"
+					quid       	"57CAB8AC01DD"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"FromClientToSupplier"
+					sequence   	"2.1.1.1.1.1"
+					ordinal    	7
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"57CAB8210314"
+				supplier   	"UserService"
+				quidu      	"57CAB80B0125"
+				messages   	(list Messages
+				    (object Message "根据部门获取该部门下的用户列表"
+					quid       	"57CAB8210315"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2.1.1"
+					ordinal    	4
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "返回用户列表"
+					quid       	"57CAB86D01DC"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"ToClientFromSupplier"
+					sequence   	"2.1.1.1.1"
+					ordinal    	6
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"57CAB95C00BE"
+				supplier   	"投诉对象"
+				quidu      	"57CAB94603CF"
+				messages   	(list Messages
+				    (object Message "生成投诉对象"
+					quid       	"57CAB95C00BF"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4.1"
+					ordinal    	10
+					quidu      	"000000000000"
+					creation   	TRUE)
+				    (object Message "返回投诉对象"
+					quid       	"57CAB981037C"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"ToClientFromSupplier"
+					sequence   	"5"
+					ordinal    	11
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"57CAB9D903AC"
+				supplier   	"ComplainService"
+				quidu      	"57CAB9B60252"
+				messages   	(list Messages
+				    (object Message "保存投诉信息"
+					quid       	"57CAB9D903AD"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"5.1"
+					ordinal    	12
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "我要投诉页面"
+			quid       	"57CAB79F01FE"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"57CAB7D10253"
+				supplier   	"我要投诉页面"
+				quidu      	"57CAB79F01FE"
+				messages   	(list Messages
+				    (object Message "选择部门"
+					quid       	"57CAB7D10254"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2"
+					ordinal    	2
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "输入投诉信息"
+					quid       	"57CAB900024D"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"3"
+					ordinal    	8
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "刷新父窗口"
+					quid       	"57CABA76027C"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4.2.2"
+					ordinal    	16
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "关闭当前窗口"
+					quid       	"57CABA950301"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4.2.2.1"
+					ordinal    	17
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"57CAB922006F"
+				supplier   	"系统首页Action"
+				quidu      	"57CAB770024E"
+				messages   	(list Messages
+				    (object Message "提交投诉信息"
+					quid       	"57CAB9220070"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4"
+					ordinal    	9
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "输出投诉成功"
+					quid       	"57CABA29024C"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"4.2"
+					ordinal    	14
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"57CABA640317"
+				supplier   	"$UNNAMED$0"
+				quidu      	"57CAB75501F0"
+				messages   	(list Messages
+				    (object Message "提示投诉成功"
+					quid       	"57CABA640318"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4.2.1"
+					ordinal    	15
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE)
+		    (object Object "UserService"
+			quid       	"57CAB80B0125"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"57CAB840033C"
+				supplier   	"UserService"
+				quidu      	"57CAB80B0125"
+				messages   	(list Messages
+				    (object Message "根据部门查询用户"
+					quid       	"57CAB840033D"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2.1.1.1"
+					ordinal    	5
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "投诉对象"
+			quid       	"57CAB94603CF"
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE)
+		    (object Object "ComplainService"
+			quid       	"57CAB9B60252"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"57CAB9FE03B8"
+				supplier   	"ComplainService"
+				quidu      	"57CAB9B60252"
+				messages   	(list Messages
+				    (object Message "保存投诉"
+					quid       	"57CAB9FE03B9"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"5.1.1"
+					ordinal    	13
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"57CAB6BF038C"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram "我要投诉时序图"
+		mechanism_ref 	@2
+		quid       	"57CAB6E10171"
+		title      	"我要投诉时序图"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object InterObjView "$UNNAMED$0" @3
+			location   	(284, 319)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(284, 344)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	324
+			    justify    	0
+			    label      	"")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"57CAB75501F0"
+			width      	300
+			height     	2564
+			icon_height 	150
+			icon_width 	108
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @4
+			    location   	(284, 399)
+			    line_color 	3342489
+			    InterObjView 	@3
+			    height     	122
+			    y_coord    	32
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @5
+			    location   	(284, 2443)
+			    line_color 	3342489
+			    InterObjView 	@3
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterObjView "系统首页Action" @6
+			location   	(793, 225)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(793, 225)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"系统首页Action")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"57CAB770024E"
+			width      	300
+			height     	2658
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @7
+			    location   	(793, 431)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	195
+			    y_coord    	105
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @8
+			    location   	(793, 821)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	239
+			    y_coord    	149
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @9
+			    location   	(793, 1205)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	215
+			    y_coord    	125
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @10
+			    location   	(793, 1731)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	697
+			    y_coord    	607
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @11
+			    location   	(793, 1998)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	195
+			    y_coord    	105
+			    Nested     	TRUE))
+		    (object InterObjView "投诉对象" @12
+			location   	(1348, 1836)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@12
+			    location   	(1348, 1836)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"投诉对象")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"57CAB94603CF"
+			width      	300
+			height     	1047
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @13
+			    location   	(1348, 1836)
+			    line_color 	3342489
+			    InterObjView 	@12
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @14
+			    location   	(1348, 1916)
+			    line_color 	3342489
+			    InterObjView 	@12
+			    height     	82
+			    y_coord    	-8
+			    Nested     	FALSE))
+		    (object InterObjView "我要投诉页面" @15
+			location   	(1782, 231)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@15
+			    location   	(1782, 231)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"我要投诉页面")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"57CAB79F01FE"
+			width      	300
+			height     	2652
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @16
+			    location   	(1782, 311)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @17
+			    location   	(1782, 536)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @18
+			    location   	(1782, 691)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @19
+			    location   	(1782, 716)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	804
+			    y_coord    	714
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @20
+			    location   	(1782, 1420)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	1
+			    y_coord    	-89
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @21
+			    location   	(1782, 1578)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @22
+			    location   	(1782, 1603)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @23
+			    location   	(1782, 1731)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	667
+			    y_coord    	577
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @24
+			    location   	(1782, 2338)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	300
+			    y_coord    	210
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @25
+			    location   	(1782, 2573)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	195
+			    y_coord    	105
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @26
+			    location   	(1782, 2703)
+			    line_color 	3342489
+			    InterObjView 	@15
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE))
+		    (object InterObjView "UserService" @27
+			location   	(2223, 225)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@27
+			    location   	(2223, 225)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"UserService")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"57CAB80B0125"
+			width      	300
+			height     	2658
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @28
+			    location   	(2223, 970)
+			    line_color 	3342489
+			    InterObjView 	@27
+			    height     	195
+			    y_coord    	105
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @29
+			    location   	(2223, 1100)
+			    line_color 	3342489
+			    InterObjView 	@27
+			    height     	310
+			    y_coord    	220
+			    Nested     	TRUE))
+		    (object InterObjView "ComplainService" @30
+			location   	(2803, 225)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@30
+			    location   	(2803, 225)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	350
+			    justify    	0
+			    label      	"ComplainService")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"57CAB9B60252"
+			width      	368
+			height     	2658
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @31
+			    location   	(2803, 2103)
+			    line_color 	3342489
+			    InterObjView 	@30
+			    height     	195
+			    y_coord    	105
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @32
+			    location   	(2803, 2233)
+			    line_color 	3342489
+			    InterObjView 	@30
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE))
+		    (object InterMessView "我要投诉" @33
+			location   	(0, 431)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @34
+			    Parent_View 	@33
+			    location   	(538, 387)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB78D00DE"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	234
+			    justify    	0
+			    label      	"我要投诉"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@3
+			supplier   	@6
+			Focus_Src  	@4
+			Focus_Entry 	@7
+			origin     	(299, 431)
+			terminus   	(777, 431)
+			ordinal    	0)
+		    (object InterMessView "跳转到我要投诉页面" @35
+			location   	(0, 536)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @36
+			    Parent_View 	@35
+			    location   	(1287, 492)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB7B30260"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	453
+			    justify    	0
+			    label      	"跳转到我要投诉页面"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@15
+			Focus_Src  	@7
+			Focus_Entry 	@17
+			origin     	(808, 536)
+			terminus   	(1766, 536)
+			ordinal    	1)
+		    (object SelfMessView "选择部门" @37
+			location   	(0, 691)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @38
+			    Parent_View 	@37
+			    location   	(1873, 647)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB7D10254"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	234
+			    justify    	0
+			    label      	"选择部门"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@15
+			Focus_Src  	@18
+			Focus_Entry 	@19
+			origin     	(1798, 691)
+			terminus   	(1948, 691)
+			ordinal    	2)
+		    (object InterMessView "获取用户列表" @39
+			location   	(0, 821)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @40
+			    Parent_View 	@39
+			    location   	(1288, 777)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB7EE0365"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	310
+			    justify    	0
+			    label      	"获取用户列表"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@15
+			supplier   	@6
+			Focus_Src  	@19
+			Focus_Entry 	@8
+			origin     	(1766, 821)
+			terminus   	(809, 821)
+			ordinal    	3)
+		    (object InterMessView "根据部门获取该部门下的用户列表" @41
+			location   	(0, 970)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @42
+			    Parent_View 	@41
+			    location   	(1507, 926)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB8210315"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	759
+			    justify    	0
+			    label      	"根据部门获取该部门下的用户列表"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@27
+			Focus_Src  	@8
+			Focus_Entry 	@28
+			origin     	(808, 970)
+			terminus   	(2207, 970)
+			ordinal    	4)
+		    (object SelfMessView "根据部门查询用户" @43
+			location   	(0, 1075)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @44
+			    Parent_View 	@43
+			    location   	(2314, 1031)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB840033D"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	411
+			    justify    	0
+			    label      	"根据部门查询用户"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@27
+			supplier   	@27
+			Focus_Src  	@28
+			Focus_Entry 	@29
+			origin     	(2239, 1075)
+			terminus   	(2389, 1075)
+			ordinal    	5)
+		    (object InterMessView "返回用户列表" @45
+			location   	(0, 1205)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @46
+			    Parent_View 	@45
+			    location   	(1508, 1161)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB86D01DC"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	310
+			    justify    	0
+			    label      	"返回用户列表"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@27
+			supplier   	@6
+			Focus_Src  	@29
+			Focus_Entry 	@9
+			origin     	(2207, 1205)
+			terminus   	(809, 1205)
+			ordinal    	6)
+		    (object InterMessView "输出用户列表json格式字符串" @47
+			location   	(0, 1420)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @48
+			    Parent_View 	@47
+			    location   	(1285, 1393)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB8AC01DD"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	638
+			    justify    	0
+			    label      	"输出用户列表json格式字符串"
+			    pctDist    	0.498361
+			    height     	28
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@15
+			Focus_Src  	@9
+			Focus_Entry 	@20
+			origin     	(808, 1420)
+			terminus   	(1766, 1420)
+			ordinal    	7)
+		    (object SelfMessView "输入投诉信息" @49
+			location   	(0, 1578)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @50
+			    Parent_View 	@49
+			    location   	(1873, 1534)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB900024D"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	322
+			    justify    	0
+			    label      	"输入投诉信息"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@15
+			Focus_Src  	@21
+			Focus_Entry 	@22
+			origin     	(1798, 1578)
+			terminus   	(1948, 1578)
+			ordinal    	8)
+		    (object InterMessView "提交投诉信息" @51
+			location   	(0, 1731)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @52
+			    Parent_View 	@51
+			    location   	(1288, 1687)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB9220070"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"提交投诉信息"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@15
+			supplier   	@6
+			Focus_Src  	@23
+			Focus_Entry 	@10
+			origin     	(1766, 1731)
+			terminus   	(809, 1731)
+			ordinal    	9)
+		    (object InterMessView "生成投诉对象" @53
+			location   	(0, 1836)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @54
+			    Parent_View 	@53
+			    location   	(1003, 1792)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB95C00BF"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"生成投诉对象"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@12
+			Focus_Src  	@10
+			Focus_Entry 	@13
+			origin     	(808, 1836)
+			terminus   	(1198, 1836)
+			ordinal    	10)
+		    (object InterMessView "返回投诉对象" @55
+			location   	(0, 1998)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @56
+			    Parent_View 	@55
+			    location   	(1071, 1954)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB981037C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"返回投诉对象"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@12
+			supplier   	@6
+			Focus_Src  	@14
+			Focus_Entry 	@11
+			origin     	(1332, 1998)
+			terminus   	(809, 1998)
+			ordinal    	11)
+		    (object InterMessView "保存投诉信息" @57
+			location   	(0, 2103)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @58
+			    Parent_View 	@57
+			    location   	(1797, 2059)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB9D903AD"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"保存投诉信息"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@30
+			Focus_Src  	@11
+			Focus_Entry 	@31
+			origin     	(808, 2103)
+			terminus   	(2787, 2103)
+			ordinal    	12)
+		    (object SelfMessView "保存投诉" @59
+			location   	(0, 2208)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @60
+			    Parent_View 	@59
+			    location   	(2894, 2164)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CAB9FE03B9"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	244
+			    justify    	0
+			    label      	"保存投诉"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@30
+			supplier   	@30
+			Focus_Src  	@31
+			Focus_Entry 	@32
+			origin     	(2819, 2208)
+			terminus   	(2969, 2208)
+			ordinal    	13)
+		    (object InterMessView "输出投诉成功" @61
+			location   	(0, 2338)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @62
+			    Parent_View 	@61
+			    location   	(1287, 2294)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CABA29024C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"输出投诉成功"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@15
+			Focus_Src  	@10
+			Focus_Entry 	@24
+			origin     	(808, 2338)
+			terminus   	(1766, 2338)
+			ordinal    	14)
+		    (object InterMessView "提示投诉成功" @63
+			location   	(0, 2443)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @64
+			    Parent_View 	@63
+			    location   	(1033, 2399)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CABA640318"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"提示投诉成功"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@15
+			supplier   	@3
+			Focus_Src  	@24
+			Focus_Entry 	@5
+			origin     	(1766, 2443)
+			terminus   	(300, 2443)
+			ordinal    	15)
+		    (object SelfMessView "刷新父窗口" @65
+			location   	(0, 2548)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @66
+			    Parent_View 	@65
+			    location   	(1873, 2504)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CABA76027C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	288
+			    justify    	0
+			    label      	"刷新父窗口"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@15
+			Focus_Src  	@24
+			Focus_Entry 	@25
+			origin     	(1798, 2548)
+			terminus   	(1948, 2548)
+			ordinal    	16)
+		    (object SelfMessView "关闭当前窗口" @67
+			location   	(0, 2678)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @68
+			    Parent_View 	@67
+			    location   	(1873, 2634)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"57CABA950301"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	332
+			    justify    	0
+			    label      	"关闭当前窗口"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@15
+			supplier   	@15
+			Focus_Src  	@25
+			Focus_Entry 	@26
+			origin     	(1798, 2678)
+			terminus   	(1948, 2678)
+			ordinal    	17)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"57CAB6BF014C"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"57CAB6BF0386"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"57CAB6BF014A")
+    process_structure 	(object Processes
+	quid       	"57CAB6BF014D"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"57CAB6BF014F"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Java"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"RootDir"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"StopOnError"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"UsePrefixes"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"AutoSync"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"NotShowRoseIDDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ShowCodegenDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateRoseID"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultJ2EEJavadoc"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultReturnLine"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocDefaultAuthor"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocDefaultVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocDefaultSince"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"UserDefineJavaDocTags"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocNumAsterisks"
+			value      	0)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MaxNumChars"
+			value      	80)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Editor"
+			value      	("EditorType" 100))
+		    (object Attribute
+			tool       	"Java"
+			name       	"VM"
+			value      	("VMType" 200))
+		    (object Attribute
+			tool       	"Java"
+			name       	"ClassPath"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ReferenceClasspath"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EditorType"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"BuiltIn"
+				value      	100)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"VMType"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Sun"
+				value      	200)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"VAJavaWorkingFolder"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"InstanceVariablePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ClassVariablePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultAttributeDataType"
+			value      	"int")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultOperationReturnType"
+			value      	"void")
+		    (object Attribute
+			tool       	"Java"
+			name       	"NoClassCustomDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GlobalImports"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"OpenBraceClassStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"OpenBraceMethodStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"UseTabs"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"UseSpaces"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"SpacingItems"
+			value      	3)
+		    (object Attribute
+			tool       	"Java"
+			name       	"RoseDefaultCommentStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"AsteriskCommentStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavaCommentStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocAuthor"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocSince"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocVersion"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocExceptionTag"
+			value      	"@throws")
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"RemotePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"RemoteSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"HomePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"HomeSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalHomePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalHomeSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"PrimaryKeyPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"PrimaryKeySuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBDTDLocation"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletDTDLocation"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultEJBVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultServletVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"SourceControl"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCSelected"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCProjectSourceRoot"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCProjectName"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCComment"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"FundamentalType"
+			value      	"boolean; char; byte; short; int; long; float; double; Boolean; Byte; Character; Double; Float; Integer; Long; Object; Short; String; StringBuffer; Void; java.math.BigDecimal; java.math.BigInteger; java.sql.Date; java.sql.Time; java.sql.Timestamp; java.util.AbstractCollection; java.util.AbstractList;java.util.AbstractMap; java.util.AbstractSequentialList; java.util.AbstractSet; java.util.ArrayList; java.util.Arrays; java.util.BitSet; java.util.Calendar; java.util.Collections; java.util.Date; java.util.Date; java.util.Dictionary; java.util.EventObject; java.util.GregorianCalendar; java.util.HashMap; java.util.HashSet; java.util.Hashtable; java.util.LinkedList; java.util.ListResourceBundle; java.util.Locale; java.util.Observable; java.util.Properties; java.util.PropertyPermission; java.util.PropertyResourceBundle; java.util.Random; java.util.ResourceBundle; java.util.SimpleTimeZone; java.util.Stack; java.util.StringTokenizer; java.util.Timer; java.util.TimerTask; java.util.TimeZone; java.util.TreeMap; java.util.TreeSet; java.util.Vector; java.util.WeakHashMap;int; float; boolean; char; double; short; long; byte; ;Boolean; Byte; Character; Double; Float; Integer; Long; Object; Short; String; StringBuffer; Void; java.math.BigDecimal; java.math.BigInteger; java.sql.Date; java.sql.Time; java.sql.Timestamp; ;java.util.AbstractCollection; java.util.AbstractList; java.util.AbstractMap; java.util.AbstractSequentialList; java.util.AbstractSet; java.util.ArrayList; java.util.Arrays; java.util.BitSet; java.util.Calendar; java.util.Collections; java.util.Date; java.util.Dictionary; java.util.EventObject; java.util.GregorianCalendar; java.util.HashMap; java.util.HashSet; java.util.Hashtable; java.util.LinkedList; java.util.ListResourceBundle; java.util.Locale; java.util.Observable; java.util.Properties; java.util.PropertyPermission; java.util.PropertyResourceBundle; java.util.Random; java.util.ResourceBundle; java.util.ArrayList; java.util.SimpleTimeZone; java.util.Stack; java.util.StringTokenizer; java.util.Timer; java.util.TimerTask; java.util.TimerTask; java.util.TimeZone; java.util.TreeMap; java.util.TreeSet; java.util.Vector; java.util.WeakHashMap; ")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Static"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultConstructor"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ConstructorIs"
+			value      	("Ctor_Set" 62))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Ctor_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"public"
+				value      	62)
+			    (object Attribute
+				tool       	"Java"
+				name       	"protected"
+				value      	63)
+			    (object Attribute
+				tool       	"Java"
+				name       	"private"
+				value      	64)
+			    (object Attribute
+				tool       	"Java"
+				name       	"package"
+				value      	65)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFinalizer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateStaticInitializer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateInstanceInitializer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"DisableAutoSync"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Strictfp"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"Default_Servlet__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletName"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletContextRef"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"IsSingleThread"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletInitParameter"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletInitParameterNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletIsSecure"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestDispatcher"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestDispatcherPath"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DispatcherInclude"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"DispatcherForward"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletSecurityRoles"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletgetInfo"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletXMLFilePath"
+			value      	"")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"Http_Servlet__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestAttribute"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestAttributesNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForRequestAttributes"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestParameter"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestParameterNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForRequestParameters"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletHeader"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletHeaderNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForHeaders"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletIntHeader"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletDateHeader"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletCookie"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForCookie"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletContentType"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateHTML"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"Default_EJB__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Generate_XML_DD"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBCmpField"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBEnvironmentProperties"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBCnxFactory"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBReferences"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSecurityRoles"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBNameInJAR"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSessionType"
+			value      	("EJBSessionType_Set" 200))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSessionType_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	""
+				value      	200)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Stateless"
+				value      	201)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Stateful"
+				value      	202)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBTransactionType"
+			value      	("EJBTransactionType_Set" 211))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBTransactionType_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Container"
+				value      	211)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bean"
+				value      	212)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBPersistenceType"
+			value      	("EJBPersistenceType_Set" 220))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBPersistenceType_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	""
+				value      	220)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bean"
+				value      	221)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Container"
+				value      	222)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBReentrant"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSessionSync"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBVersion"
+			value      	("EJBVersion_Set" 230))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBVersion_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"2.0"
+				value      	230)
+			    (object Attribute
+				tool       	"Java"
+				name       	"1.x"
+				value      	231)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBXMLFilePath"
+			value      	"")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Abstract"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Static"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Native"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Synchronized"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFullyQualifiedReturn"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ReplaceExistingCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Strictfp"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"PropertyType"
+			value      	("BeanProperty_Set" 71))
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanProperty_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Not A Property"
+				value      	71)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Simple"
+				value      	72)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bound"
+				value      	73)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Constrained"
+				value      	74)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"IndividualChangeMgt"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write"
+			value      	("Read/Write_Set" 81))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read & Write"
+				value      	81)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read Only"
+				value      	82)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Write Only"
+				value      	83)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFullyQualifiedTypes"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"ContainerClass"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"InitialValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"PropertyType"
+			value      	("BeanProperty_Set" 71))
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanProperty_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Not A Property"
+				value      	71)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Simple"
+				value      	72)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bound"
+				value      	73)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Constrained"
+				value      	74)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"IndividualChangeMgt"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write"
+			value      	("Read/Write_Set" 81))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read & Write"
+				value      	81)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read Only"
+				value      	82)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Write Only"
+				value      	83)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFullyQualifiedTypes"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"IsNavigable"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"57CAB6BF014E"))

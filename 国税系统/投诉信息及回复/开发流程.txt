@@ -1,0 +1,11 @@
+1、需求分析投诉受理管理（Edraw Max画出流程图，利用power designer设计cdm/pdm）
+
+2、逆向工程（设计cdm/pdm；根据pdm中的数据库建表语句创建数据库表；根据数据库表逆向生成实体及其映射文件）
+
+3、投诉受理管理（entity,dao,service,action,conf）
+
+4、多条件查询并回显；精确定位分页页面
+
+5、我要投诉（根据部门查询用户列表①直接用输出流输出Json格式字符串 ②使用struts-json-plugin.jar将action中对应的对象自动生成json格式字符串）
+
+6、①edraw max 画流程图 ②power desiger 设计cdm/pdm ③ 富文本编辑器ueditor ④ 日期选择组件 WDatepicker.js ⑤ Hi Json格式化Json字符串

@@ -1,0 +1,5 @@
+1。解压mybatis_generator_1.3.1.zip文件
+2。把features，pougins文件夹copy到C:\Users\chufeng\MyEclipse\MyEclipse 10\soft\mybatis目录下（C:\Users\chufeng\MyEclipse\MyEclipse 10\为myecpist安装目录， soft/mybaits可以自己创建）
+3。进入C:\Users\chufeng\MyEclipse\MyEclipse 10\dropins目录，并新建mybatis.link文件，添加内容：path=C:\Users\chufeng\MyEclipse\MyEclipse 10\soft\mybatis
+4。启动myeclipse
+5。项目中添加generatorConfig.xml文件，并修改相关内容。右建可以找到generator mybatis artifacts生成
